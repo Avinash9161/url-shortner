@@ -1,0 +1,15 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "URL shortener with Redis caching, rate limiting and async click analytics",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "pg": "^8.12.0"
+  }
+}

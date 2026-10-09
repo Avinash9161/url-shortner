@@ -1,0 +1,10 @@
+CREATE SEQUENCE IF NOT EXISTS url_id_seq START 100000000;
+
+CREATE TABLE IF NOT EXISTS urls (
+  id          BIGINT PRIMARY KEY,
+  code        VARCHAR(32) UNIQUE NOT NULL,
+  long_url    TEXT NOT NULL,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+  expires_at  TIMESTAMPTZ,
+  click_count BIGINT NOT NULL DEFAULT 0
+);
