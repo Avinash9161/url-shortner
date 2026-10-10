@@ -6,7 +6,7 @@ const { pendingClicks } = require("../services/analytics");
 const rateLimit = require("../services/rateLimiter");
 
 const router = express.Router();
-const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`;
 
 router.post(
   "/shorten",

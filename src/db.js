@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 
 const pool = new Pool({
-  connectionString:
-    process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/shortener",
+  connectionString: process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/shortener",
+  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false
 });
 
 // Retries because Postgres may still be starting when the app boots.
